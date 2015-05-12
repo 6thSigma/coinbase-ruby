@@ -47,7 +47,7 @@ module Coinbase
     end
 
     def generate_receive_address options={}
-      post '/addresses', {"label": "100bits", "callback_url": "https://100bits.com/callback/received"}
+      post '/addresses', options
     end
 
     # Buttons
