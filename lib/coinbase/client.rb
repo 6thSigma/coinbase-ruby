@@ -47,7 +47,7 @@ module Coinbase
     end
 
     def generate_receive_address options={}
-      post '/account/generate_receive_address', options
+      post '/addresses', options
     end
 
     # Buttons
