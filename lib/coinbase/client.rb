@@ -262,8 +262,8 @@ module Coinbase
         path = "#{path}?#{URI.encode_www_form(options)}" if !options.empty?
         hmac_message = nonce.to_s + @base_uri + path
       else
-        request_options = {body: options.to_json}
-        hmac_message = nonce.to_s + @base_uri + path + options.to_json
+        request_options = {body: options.as_json}
+        hmac_message = nonce.to_s + @base_uri + path + options.as_json
       end
 
       signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), @api_secret, hmac_message)
